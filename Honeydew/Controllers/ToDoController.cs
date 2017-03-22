@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,6 +10,20 @@ namespace Honeydew.Controllers
 {
     public class ToDoController : Controller
     {
+
+        HttpClient client;
+        string url = "a.wunderlist.com/api/v1/";
+
+        public ToDoController()
+        {
+            client = new HttpClient();
+            client.BaseAddress = new Uri(url);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+
+
         // GET: ToDo
         public ActionResult Index()
         {
