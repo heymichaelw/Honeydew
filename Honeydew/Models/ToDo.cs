@@ -11,6 +11,7 @@ namespace Honeydew.Models
         public int Id { get; set; }
         public int ListID { get; set; }
         public string Title { get; set; }
+        public string Description { get; set; }
         public int HoursNeeded { get; set; }
         public bool Completed { get; set; }
         public string DueDate { get; set; }

@@ -21,7 +21,7 @@ namespace Honeydew.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
-        public DbSet<ToDo> ToDos { get; set; }
+        public DbSet<ToDo>ToDos { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
